@@ -1,12 +1,13 @@
-﻿using System;
+﻿using parachutes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Parachutes
+namespace parachutes
 {
-    class Para
+    class Parachutiste
     {
         private const int PARA_HEIGHT = 6;
 
@@ -34,7 +35,7 @@ namespace Parachutes
         public int altitude;
         public bool parachuteIsOpen;
 
-        public Para(string name)
+        public Parachutiste(string name)
         {
             this.name = name;
         }
@@ -70,7 +71,7 @@ namespace Parachutes
                 Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude + i);
                 Console.Write(view[i]);
             }
-            Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude -1);
+            Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude - 1);
             Console.Write(this.name);
         }
 

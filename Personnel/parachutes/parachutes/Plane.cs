@@ -1,10 +1,11 @@
-﻿using System;
+﻿using parachutes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Parachutes
+namespace parachutes
 {
     class Plane
     {
@@ -23,13 +24,13 @@ namespace Parachutes
 
         public int x;
         public int altitude;
-        public List<Para> parachutists;
+        public List<Parachutiste> parachutistes;
 
         public Plane()
         {
             x = 0;
             altitude = Config.SCREEN_HEIGHT;
-            parachutists = new List<Para>();
+            parachutistes = new List<Parachutiste>();
         }
 
         public void draw()
@@ -53,15 +54,15 @@ namespace Parachutes
             }
         }
 
-        public void board(Para para)
+        public void board(Parachutiste para)
         {
-            this.parachutists.Add(para);
+            this.parachutistes.Add(para);
         }
 
-        internal Para dropParachutist()
+        internal Parachutiste dropParachutist()
         {
-            Para parachutist = parachutists.First();
-            parachutists.Remove(parachutist);
+            Parachutiste parachutist = parachutistes.First();
+            parachutistes.Remove(parachutist);
             parachutist.x = x;
             parachutist.altitude = this.altitude;
             return parachutist;
