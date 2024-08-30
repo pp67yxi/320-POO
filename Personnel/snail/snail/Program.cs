@@ -4,24 +4,34 @@
     {
         static void Main(string[] args)
         {
-            int x = 0;
-            int life = 50;
+            List<Snail> snails = new List<Snail>();
+
+            Snail bobby = new Snail();
+            Snail isabelle = new Snail();
+
+            snails.Add(bobby);
+            snails.Add(isabelle);
+
             Console.CursorVisible = false;
             Console.ForegroundColor = ConsoleColor.Blue;
-            while (life != 0)
-            {
-                Console.SetCursorPosition(x+1, 3);
-                Console.Write(life);
 
-                Console.SetCursorPosition(x, 5);
-                Console.Write("_@_ö");
-                x++;
-                life--;
-                Thread.Sleep(100);
-                Console.Clear();
+            foreach (Snail snail in snails)
+            {
+                while (snail.hp != 0)
+                {
+                    Console.SetCursorPosition(snail.x + 1, 3);
+                    Console.Write(snail.hp);
+
+                    Console.SetCursorPosition(snail.x, 5);
+                    Console.Write(snail.alive);
+                    snail.x++;
+                    snail.hp--;
+                    Thread.Sleep(100);
+                    Console.Clear();
+                }
+                Console.SetCursorPosition(snail.x, 5);
+                Console.Write(snail.dead);
             }
-            Console.SetCursorPosition(x, 5);
-            Console.Write("____");
             Console.ReadKey();
         }
     }
