@@ -63,7 +63,7 @@ namespace parachutes
         {
             Parachutiste parachutist = parachutistes.First();
             parachutistes.Remove(parachutist);
-            parachutist.x = x;
+            parachutist.x = x + 14;
             parachutist.altitude = this.altitude;
             return parachutist;
         }

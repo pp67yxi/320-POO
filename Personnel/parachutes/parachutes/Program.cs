@@ -12,7 +12,7 @@ List<Parachutiste> paraInAir = new List<Parachutiste>();
 Plane plane = new Plane();
 for (int i = 0; i < 8; i++)
 {
-    plane.board(new Parachutiste("Bobby" + i.ToString()));
+    plane.board(new Parachutiste("Bobby" + (i+1).ToString()));
 }
 
 while (true)
@@ -38,6 +38,12 @@ while (true)
     plane.update();
     foreach (Parachutiste parachutiste in paraInAir)
     {
-
+        parachutiste.update();
     }
+    plane.draw();
+    foreach(Parachutiste parachutiste in paraInAir)
+    {
+        parachutiste.draw();
+    }
+    Thread.Sleep(100);
 }

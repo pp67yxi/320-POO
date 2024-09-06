@@ -1,6 +1,7 @@
 ﻿using parachutes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace parachutes
 
         public string name;
         public int x;
+        public int speed = 3;
         public int altitude;
         public bool parachuteIsOpen;
 
@@ -46,11 +48,11 @@ namespace parachutes
             {
                 if (parachuteIsOpen)
                 {
-                    altitude -= 1;
+                    altitude -= (speed / 2);
                 }
                 else
                 {
-                    altitude -= 3;
+                    altitude -= speed;
                 }
                 if (altitude < Config.SCREEN_HEIGHT / 2)
                 {
@@ -74,6 +76,5 @@ namespace parachutes
             Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude - 1);
             Console.Write(this.name);
         }
-
     }
 }
