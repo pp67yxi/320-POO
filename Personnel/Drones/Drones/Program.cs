@@ -1,3 +1,5 @@
+using Drones.Helpers;
+
 namespace Drones
 {
     internal static class Program
@@ -15,13 +17,22 @@ namespace Drones
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
             Drone drone = new Drone();
-            drone.X = 100;
-            drone.Y = 100;
+            drone.X = RandomHelpers.alea.Next(0, AirSpace.WIDTH);
+            drone.Y = RandomHelpers.alea.Next(0, AirSpace.HEIGHT);
             drone.Name = "Arthur";
             fleet.Add(drone);
 
+            List<Building> buildings = new List<Building>();
+            Building building = new Building();
+            building.BuildingColor = Color.Black;
+            building.Width = 10;
+            building.Depth = 10;
+            building.X = RandomHelpers.alea.Next(0 + building.Width, AirSpace.WIDTH - building.Width);
+            building.Y = RandomHelpers.alea.Next(0 + building.Depth, AirSpace.HEIGHT - building.Depth);
+            buildings.Add(building);
+
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, buildings));
         }
     }
 }
