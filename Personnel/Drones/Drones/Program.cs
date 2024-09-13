@@ -17,7 +17,7 @@ namespace Drones
             Drone drone = new Drone();
             drone.X = 100;
             drone.Y = 100;
-            drone.Name = "Arthure";
+            drone.Name = "Arthur";
             fleet.Add(drone);
 
             // Démarrage
