@@ -16,12 +16,12 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
-            for (int i = 0; i < RandomHelpers.alea.Next(1, 10); i++)
+            for (int i = 1; i <= RandomHelpers.alea.Next(1, 10); i++)
             {
                 Drone drone = new Drone();
                 drone.X = RandomHelpers.alea.Next(0, AirSpace.WIDTH);
                 drone.Y = RandomHelpers.alea.Next(0, AirSpace.HEIGHT);
-                drone.Name = "Arthur";
+                drone.Name = ("Arthur " + i);
                 fleet.Add(drone);
             }
 
