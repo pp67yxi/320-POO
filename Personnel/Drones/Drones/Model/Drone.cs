@@ -18,11 +18,22 @@ namespace Drones
 
         // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
         // que 'interval' millisecondes se sont écoulées
-        public void Update(int interval)
+        public void Update(List<Building> buildings)
         {
-            X += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
-            Y += RandomHelpers.alea.Next(-2, 3);       // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
-            Charge--;                                  // Il a dépensé de l'énergie
+            if (Charge > 0)
+            {
+                string directionX;
+                string directionY;
+
+                foreach (Building building in buildings)
+                {
+
+                }
+
+                X += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
+                Y += RandomHelpers.alea.Next(-2, 3);       // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
+                Charge--;                                  // Il a dépensé de l'énergie
+            }
         }
 
     }

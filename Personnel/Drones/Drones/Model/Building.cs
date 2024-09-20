@@ -2,7 +2,7 @@
 {
     public partial class Building
     {
-        private Color _buidlingColor;                           // Un nom
+        private Color _buidlingColor;                   // La couleur
         private int _x;                                 // Position en X depuis la gauche de l'espace aérien
         private int _y;                                 // Position en Y depuis le haut de l'espace aérien
         private int _width;                             // 
@@ -21,5 +21,15 @@
         }
         public int Width { get => _width; set => _width = value; }
         public int Depth { get => _depth; set => _depth = value; }
+    }
+
+    public class Factory : Building
+    {
+        private int _PowerConsumption;
+    }
+
+    public partial class Store : Building
+    {
+        private string[] _openingHours;
     }
 }

@@ -41,7 +41,14 @@ namespace Drones
             }
             foreach (Building building in buildings)
             {
-                building.Render(airspace);
+                if (building.GetType() == typeof(Store))
+                {
+                    building.Render(airspace, true);
+                }
+                else
+                {
+                    building.Render(airspace, false);
+                }
             }
 
             airspace.Render();
@@ -52,7 +59,7 @@ namespace Drones
         {
             foreach (Drone drone in fleet)
             {
-                drone.Update(interval);
+                drone.Update(buildings);
             }
         }
 
