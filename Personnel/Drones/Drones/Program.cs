@@ -57,8 +57,16 @@ namespace Drones
                 buildings.Add(building);
             }
 
-            // Démarrage
-            Application.Run(new AirSpace(fleet, buildings));
+            try
+            {
+                // Démarrage
+                Application.Run(new AirSpace(fleet, buildings));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
         }
     }
 }
