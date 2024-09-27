@@ -64,7 +64,7 @@ namespace Drones
         {
             foreach (Drone drone in fleet)
             {
-                drone.Update(buildings);
+                drone.Update();
             }
         }
 

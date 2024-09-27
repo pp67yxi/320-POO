@@ -21,7 +21,7 @@ namespace Drones
                 Drone drone = new Drone();
                 drone.X = RandomHelpers.alea.Next(0, AirSpace.WIDTH);
                 drone.Y = RandomHelpers.alea.Next(0, AirSpace.HEIGHT);
-                drone.Name = ("Arthur " + i);
+                drone.Name = ("Arthur ");
                 fleet.Add(drone);
             }
 
