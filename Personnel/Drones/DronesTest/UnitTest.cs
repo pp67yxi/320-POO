@@ -3,18 +3,13 @@ using Drones;
 namespace DronesTest
 {
     [TestClass]
-    public class UnitTest
+    public class UnitTest1
     {
-        public static Random alea = new Random();
-
         [TestMethod]
         public void Test_that_drone_is_taking_orders()
         {
             // Arrange
-            Drone drone = new Drone();
-            drone.X = alea.Next(0, AirSpace.WIDTH);
-            drone.Y = alea.Next(0, AirSpace.HEIGHT);
-            drone.Name = ("Arthur ");
+            Drone drone = new Drone(500, 500);
 
             // Act
             EvacuationState state = drone.GetEvacuationState();

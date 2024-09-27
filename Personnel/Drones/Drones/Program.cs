@@ -18,24 +18,12 @@ namespace Drones
             List<Drone> fleet= new List<Drone>();
             for (int i = 1; i <= RandomHelpers.alea.Next(1, 10); i++)
             {
-                Drone drone = new Drone();
-                drone.X = RandomHelpers.alea.Next(0, AirSpace.WIDTH);
-                drone.Y = RandomHelpers.alea.Next(0, AirSpace.HEIGHT);
-                drone.Name = ("Arthur ");
+                Drone drone = new Drone(RandomHelpers.alea.Next(0, AirSpace.WIDTH), RandomHelpers.alea.Next(0, AirSpace.HEIGHT));
+                drone.Name = ("Arthur " + i);
                 fleet.Add(drone);
             }
 
             List<Building> buildings = new List<Building>();
-            for (int i = 0; i < RandomHelpers.alea.Next(1, 10); i++)
-            {
-                Building building = new Building();
-                building.BuildingColor = Color.Black;
-                building.Width = 10;
-                building.Depth = 10;
-                building.X = RandomHelpers.alea.Next(0 + building.Width, AirSpace.WIDTH - building.Width);
-                building.Y = RandomHelpers.alea.Next(0 + building.Depth, AirSpace.HEIGHT - building.Depth);
-                buildings.Add(building);
-            }
             for (int i = 0; i < RandomHelpers.alea.Next(1, 5); i++)
             {
                 Factory building = new Factory();
