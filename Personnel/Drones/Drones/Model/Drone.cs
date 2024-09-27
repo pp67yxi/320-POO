@@ -15,6 +15,7 @@ namespace Drones
         public int X { get => _x; set => _x = value; }
         public int Y { get => _y; set => _y = value; }
 
+
         public bool Evacuate(Rectangle zone)
         {
             throw new NotImplementedException();
