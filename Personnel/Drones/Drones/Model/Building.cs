@@ -1,4 +1,7 @@
-﻿namespace Drones
+﻿using System.Drawing.Text;
+using Drones.Helpers;
+
+namespace Drones
 {
     public partial class Building
     {
@@ -15,6 +18,7 @@
             get => _buidlingColor;
             set
             {
+
                 _buidlingColor = value;
                 _buildingBrush = new Pen(new SolidBrush(BuildingColor), 3);
             }
@@ -27,17 +31,27 @@
     {
         private int _PowerConsumption;
         private int _id;
+        private int _cooldown;
 
         public int Id { get => _id; set => _id = value; }
 
         public Factory(int id)
         {
             Id = id;
+            _cooldown = RandomHelpers.alea.Next(50, 60);
         }
 
         public void Update()
         {
-
+            if (_cooldown == 0)
+            {
+                Console.WriteLine("Création d'une boîte à l'usine " + Id);
+                _cooldown = RandomHelpers.alea.Next(50, 60);
+            }
+            else
+            {
+                _cooldown--;
+            }
         }
     }
 

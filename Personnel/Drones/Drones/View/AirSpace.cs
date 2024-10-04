@@ -12,6 +12,7 @@ namespace Drones
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
         private List<Building> buildings;
+        private List<Box> boxes;
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
@@ -65,6 +66,15 @@ namespace Drones
             foreach (Drone drone in fleet)
             {
                 drone.Update();
+            }
+
+            foreach (Building building in buildings)
+            {
+                if (building.GetType() == typeof(Factory))
+                {
+                    Factory factory = (Factory)building;
+                    factory.Update();
+                }
             }
         }
 

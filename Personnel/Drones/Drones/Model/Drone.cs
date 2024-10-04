@@ -10,7 +10,6 @@ namespace Drones
         private string _name;                           // Un nom
         private int _x ;                                // Position en X depuis la gauche de l'espace aérien
         private int _y;                                 // Position en Y depuis le haut de l'espace aérien
-        private Rectangle _zone;
         private EvacuationState _evacuationState;
 
         public int Charge { get => _charge; set => _charge = value; }
