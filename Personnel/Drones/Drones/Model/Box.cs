@@ -1,6 +1,6 @@
 ﻿namespace Drones
 {
-    public partial class Building
+    public partial class Box
     {
         private Color _buidlingColor;                   // La couleur
         private int _x;                                 // Position en X depuis la gauche de l'espace aérien
@@ -21,28 +21,5 @@
         }
         public int Width { get => _width; set => _width = value; }
         public int Depth { get => _depth; set => _depth = value; }
-    }
-
-    public class Factory : Building
-    {
-        private int _PowerConsumption;
-        private int _id;
-
-        public int Id { get => _id; set => _id = value; }
-
-        public Factory(int id)
-        {
-            Id = id;
-        }
-
-        public void Update()
-        {
-
-        }
-    }
-
-    public partial class Store : Building
-    {
-        private string[] _openingHours;
     }
 }

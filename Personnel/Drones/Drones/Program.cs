@@ -26,7 +26,7 @@ namespace Drones
             List<Building> buildings = new List<Building>();
             for (int i = 0; i < RandomHelpers.alea.Next(1, 5); i++)
             {
-                Factory building = new Factory();
+                Factory building = new Factory(i + 1);
                 building.BuildingColor = Color.Blue;
                 building.Width = 10;
                 building.Depth = 10;
