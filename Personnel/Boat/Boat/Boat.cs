@@ -28,7 +28,7 @@ namespace Boat
             foreach (Container container in containers)
                 boatWeight += container.Weight;
 
-            if (newContainer.Weight + boatWeight <= _tonnage)
+            if (newContainer.Weight + boatWeight <= _tonnage && containers.Find(c => c.Id == newContainer.Id) == null)
             {
                 containers.Add(newContainer);
                 canLoad = true;
